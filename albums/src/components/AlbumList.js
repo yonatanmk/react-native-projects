@@ -4,11 +4,11 @@ import AlbumDetail from './AlbumDetail';
 
 class AlbumList extends Component {
   constructor(props) {
-  super(props);
-  this.state = {
-    albums: []
-  };
-}
+    super(props);
+    this.state = {
+      albums: []
+    };
+  }
 
   componentWillMount(){
     fetch('https://rallycoding.herokuapp.com/api/music_albums')
