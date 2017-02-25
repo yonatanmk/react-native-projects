@@ -10,7 +10,11 @@ class ListItem extends Component {
     const { library, expanded } = this.props;
     if (expanded) {
       return (
-        <Text>{library.description}</Text>
+        <CardSection>
+          <Text style={styles.descriptionStyle}>
+            {library.description}
+          </Text>
+        </CardSection>
       );
     }
   }
@@ -24,9 +28,9 @@ class ListItem extends Component {
         onPress={()=>this.props.selectLibrary(id)}
       >
         <View>
-          <CardSection style={titleStyle}>
-            <Text>
-              {this.props.library.title}
+          <CardSection>
+            <Text style={titleStyle}>
+              {title}
             </Text>
           </CardSection>
           {this.renderDescription()}
@@ -39,7 +43,12 @@ class ListItem extends Component {
 const styles = {
   titleStyle: {
     fontSize: 18,
+    paddingLeft: 15
+  },
+  descriptionStyle: {
     paddingLeft: 15,
+    paddingRight: 15,
+    flex: 1
   }
 };
 
