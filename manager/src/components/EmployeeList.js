@@ -1,3 +1,4 @@
+
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -9,14 +10,10 @@ class EmployeeList extends Component {
   componentWillMount() {
     this.props.employeesFetch();
 
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
-
     this.createDataSource(this.props);
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     this.createDataSource(nextProps);
   }
 
@@ -29,22 +26,23 @@ class EmployeeList extends Component {
   }
 
   renderRow(employee) {
-    return <ListItem employee={employee} />
+    return <ListItem employee={employee} />;
   }
 
-  render () {
+  render() {
     return (
-      <ListView>
+      <ListView
+        enableEmptySections
         dataSource={this.dataSource}
         renderRow={this.renderRow}
-      </ListView>
+      />
     );
   }
 }
 
 const mapStateToProps = state => {
   const employees = _.map(state.employees, (val, uid) => {
-    return {...val, uid};
+    return { ...val, uid };
   });
 
   return { employees };
