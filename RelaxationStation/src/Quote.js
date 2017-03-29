@@ -11,7 +11,7 @@ class Quote extends Component {
 	render() {
     return (
       <View style={styles.quoteContainer}>
-        <Text style={styles.quoteText}>{this.props.quoteText}</Text>
+        <Text style={styles.quoteText}>"{this.props.quoteText}"</Text>
         <Text style={styles.sourceText}>- {this.props.quoteSource}</Text>
       </View>
     );
