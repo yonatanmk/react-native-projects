@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import {
   StyleSheet,
   View,
@@ -9,11 +9,16 @@ class QuoteScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Quote quoteText='text' quoteSource='a source yay'/>
+        <Quote quoteText={this.props.text} quoteSource={this.props.source}/>
       </View>
     );
   }
 }
+
+QuoteScreen.propTypes = {
+  text: PropTypes.string.isRequired,
+  source: PropTypes.string.isRequired,
+};
 
 const styles = StyleSheet.create({
   container: {
