@@ -13,7 +13,7 @@ class StartScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.button} onPress={()=>alert('I was pressed')}>
+        <TouchableOpacity style={styles.button} onPress={this.props.onStartHandler}>
           <Image style={styles.buttonImage} source={zenImage} />
         </TouchableOpacity>
         <Text style={styles.readyText}>I am ready to relax...</Text>

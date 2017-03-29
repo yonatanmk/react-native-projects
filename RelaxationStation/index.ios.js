@@ -19,7 +19,7 @@ export default class RelaxationStation extends Component {
         renderScene={(route, navigator) => {
           switch(route.name) {
             case 'StartScreen':
-              return <StartScreen />;
+              return <StartScreen onStartHandler={()=> navigator.push({ name: 'QuoteScreen' })}/>;
             case 'QuoteScreen':
               return <QuoteScreen />;
           }
