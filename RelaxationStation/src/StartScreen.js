@@ -1,30 +1,23 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
   Image,
-  Navigator,
   TouchableOpacity,
 } from 'react-native';
-import StartScreen from './src/StartScreen';
-import QuoteScreen from './src/QuoteScreen';
 
-export default class RelaxationStation extends Component {
+const zenImage = require('../assets/zen.png');
+
+class StartScreen extends Component {
   render() {
     return (
-      <Navigator
-        initialRoute={{ name: 'StartScreen' }}
-        renderScene={(route, navigator) => {
-          switch(route.name) {
-            case 'StartScreen':
-              return <StartScreen />;
-            case 'QuoteScreen':
-              return <QuoteScreen />;
-          }
-        }}
-      />
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.button} onPress={()=>alert('I was pressed')}>
+          <Image style={styles.buttonImage} source={zenImage} />
+        </TouchableOpacity>
+        <Text style={styles.readyText}>I am ready to relax...</Text>
+      </View>
     );
   }
 }
@@ -57,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('RelaxationStation', () => RelaxationStation);
+export default StartScreen;
