@@ -26,6 +26,7 @@ Quote.propTypes = {
 const styles = StyleSheet.create({
 	quoteContainer: {
 		flex: 1,
+    // flexDirection: 'row',
 		justifyContent: 'center',
 	},
 	quoteText: {
@@ -35,6 +36,8 @@ const styles = StyleSheet.create({
 		fontSize: 36,
 		color: '#ffffff',
 		marginVertical: 30,
+    // flex: 0.9,
+    // justifyContent: 'center',
 	},
 	sourceText: {
 		fontFamily: (Platform.OS === 'ios') ?
@@ -46,5 +49,7 @@ const styles = StyleSheet.create({
 		fontStyle: 'italic',
 	},
 });
+
+// <View style={{flex:1, flexDirection:'row'}}>
 
 export default Quote;
