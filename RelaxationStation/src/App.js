@@ -17,7 +17,7 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			quoteIndex: 3,
+			quoteIndex: 0,
 		};
 
 		this._incrementQuoteIndex = this._incrementQuoteIndex.bind(this);
