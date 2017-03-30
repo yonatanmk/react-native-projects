@@ -6,8 +6,7 @@ import {
 // import { createStore, applyMiddleware } from 'redux';
 // import thunk from 'redux-thunk';
 
-import MainScreen from './src/components/MainScreen';
-import SignInScreen from './src/components/SignInScreen';
+import App from './src/components/App';
 
 // import AppContainer from './containers/AppContainer';
 // import chatNowReducers from './reducers';
@@ -17,7 +16,7 @@ import SignInScreen from './src/components/SignInScreen';
 class ChatNow extends Component {
 	render() {
 		return (
-      <SignInScreen />
+      <App />
 		);
 	}
 }

@@ -17,7 +17,7 @@ class MainScreen extends Component {
 				</View>
 
 				<View style={styles.buttonContainer}>
-					<TouchableOpacity style={styles.button}>
+					<TouchableOpacity style={styles.button} onPress={this.props.getHelpPressHandler}>
 						<Text style={styles.buttonText}>Get Help</Text>
 					</TouchableOpacity>
 				</View>
@@ -26,9 +26,9 @@ class MainScreen extends Component {
 	}
 }
 
-// MainScreen.propTypes = {
-// 	getHelpPressHandler: PropTypes.func.isRequired,
-// };
+MainScreen.propTypes = {
+	getHelpPressHandler: PropTypes.func.isRequired,
+};
 
 const styles = StyleSheet.create({
 	container: {
