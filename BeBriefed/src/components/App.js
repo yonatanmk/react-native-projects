@@ -4,10 +4,10 @@ import {
 	View,
 	StyleSheet,
 } from 'react-native';
-// import LinearGradient from 'react-native-linear-gradient'
+// import LinearGradient from 'react-native-linear-gradient';
 //
 import StatusScreen from './StatusScreen';
-// import TabBarContainer from './TabBarContainer'
+import TabBarContainer from './TabBarContainer';
 
 
 class App extends Component {
@@ -32,6 +32,7 @@ class App extends Component {
 		return (
       <View style={styles.container}>
         <StatusScreen isUp={this.state.isUp} lastUpTime={this.state.lastUpTime}/>
+        <TabBarContainer />
       </View>
 		);
 	}
