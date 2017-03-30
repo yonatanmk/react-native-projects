@@ -9,7 +9,7 @@ import routes from '../routes';
 import MainScreen from './MainScreen';
 import SignInScreen from './SignInScreen';
 // import ChatContainer from '../containers/ChatContainer';
-// import NavBarRouteMapper from './NavBarRouteMapper';
+import NavBarRouteMapper from './NavBarRouteMapper';
 // import { getCustomerInfo } from '../storageManager';
 
 
@@ -49,6 +49,10 @@ class App extends Component {
 				renderScene={this._renderScene}
 				style={styles.container}
 				sceneStyle={styles.sceneContainer}
+        navigationBar={<Navigator.NavigationBar
+          routeMapper={NavBarRouteMapper}
+          style={styles.navBar}
+        />}
 			/>
 		);
 	}
@@ -68,7 +72,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'stretch',
-		// marginTop: Platform.OS === 'ios' ? 64 : 56,
+		marginTop: Platform.OS === 'ios' ? 64 : 56,
 	},
 	navBar: {
 		backgroundColor: '#efefef',
