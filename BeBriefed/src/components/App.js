@@ -23,6 +23,7 @@ class App extends Component {
     };
 
     this._switchService = this._switchService.bind(this);
+    this._fetchServiceStatus = this._fetchServiceStatus.bind(this);
   }
 
   componentDidMount() {
