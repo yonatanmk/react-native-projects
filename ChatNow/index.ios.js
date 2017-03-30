@@ -7,6 +7,7 @@ import {
 // import thunk from 'redux-thunk';
 
 import MainScreen from './src/components/MainScreen';
+import SignInScreen from './src/components/SignInScreen';
 
 // import AppContainer from './containers/AppContainer';
 // import chatNowReducers from './reducers';
@@ -16,7 +17,7 @@ import MainScreen from './src/components/MainScreen';
 class ChatNow extends Component {
 	render() {
 		return (
-      <MainScreen />
+      <SignInScreen />
 		);
 	}
 }
