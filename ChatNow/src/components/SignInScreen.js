@@ -5,6 +5,7 @@ import {
   TextInput,
 	TouchableOpacity,
 	StyleSheet,
+  Linking,
 } from 'react-native';
 
 // import { setCustomerInfo } from '../storageManager';
@@ -35,6 +36,7 @@ const SignInScreen = (props) => (
 
 		<Text
 			style={styles.externalLink}
+      onPress={openHelpPage}
 		>
 			Forgot your account number?
 		</Text>
@@ -58,9 +60,9 @@ const SignInScreen = (props) => (
 // 		});
 // }
 
-// function openHelpPage() {
-// 	Linking.openURL('https://www.google.com/');
-// }
+function openHelpPage() {
+	Linking.openURL('https://www.google.com/');
+}
 
 const styles = StyleSheet.create({
 	container: {
