@@ -17,13 +17,16 @@ const SignInScreen = (props) => (
     <Text style={styles.label}>My Name:</Text>
     <TextInput
       style={styles.textbox}
-
+			value={props.name}
+			onChangeText={props.onNameUpdate}
     />
 
     <Text style={styles.label}>My Account Number:</Text>
     <TextInput
-      style={styles.textbox}
-      keyboardType="numeric"
+			style={styles.textbox}
+			value={props.accountNumber}
+			keyboardType="numeric"
+			onChangeText={props.onAccountNumberUpdate}
     />
 
 

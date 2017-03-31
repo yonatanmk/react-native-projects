@@ -9,7 +9,7 @@ import { createStore, applyMiddleware } from 'redux';
 import App from './src/components/App';
 
 // import AppContainer from './containers/AppContainer';
-import chatNowReducers from './reducers';
+import chatNowReducers from './src/reducers';
 
 let store = createStore(chatNowReducers);
 
