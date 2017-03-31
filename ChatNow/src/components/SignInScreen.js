@@ -32,6 +32,7 @@ const SignInScreen = (props) => (
 
 			<TouchableOpacity
 				style={styles.actionButton}
+				onPress={() => { goPressHandler(props.navHandler, props.name, props.accountNumber) }}
 			>
 				<Text style={styles.actionButtonText}>Go</Text>
 			</TouchableOpacity>
@@ -55,12 +56,13 @@ SignInScreen.propTypes = {
 };
 
 function goPressHandler(navHandler, name, accountNum) {
-	setCustomerInfo(name, accountNum)
-		.then(() => navHandler())
-		.catch(ex => {
-			console.log('Error storing customer name and account, proceeding anyway. Details:', ex);
-			navHandler();
-		});
+	// setCustomerInfo(name, accountNum)
+	// 	.then(() => navHandler())
+	// 	.catch(ex => {
+	// 		console.log('Error storing customer name and account, proceeding anyway. Details:', ex);
+	// 		navHandler();
+	// 	});
+	navHandler();
 }
 
 function openHelpPage() {

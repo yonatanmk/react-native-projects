@@ -33,7 +33,7 @@ class App extends Component {
 	_renderScene(route, navigator) {
 		switch (route.name) {
 		case 'SignInScreen':
-			return <SignInContainer navHandler={navigator.push(routes.chat)}/>;
+			return <SignInContainer navHandler={ () => { navigator.push(routes.chat); } }/>;
 		case 'ChatScreen':
 			return <ChatContainer />;
 		case 'MainScreen':
