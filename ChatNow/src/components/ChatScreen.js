@@ -42,13 +42,8 @@ class ChatScreen extends Component {
 	}
 
 	render() {
-    const messages = [
-      {isOwnMessage: false, message: "Hi I'm Alice. How can I help you today?"},
-      {isOwnMessage: true, message: "Hello Alice, I would like to upgrade to the next tier of service"},
-      {isOwnMessage: false, message: "Sure Thing! I can help you with that."},
-    ];
 
-		const bubbles = messages.map((m, i) => <MessageBubble {...m} key={i} />);
+		const bubbles = this.props.messages.map((m, i) => <MessageBubble {...m} key={i} />);
 
 		const spacer = Platform.OS === 'ios' ? <KeyboardSpacer /> : null;
 
