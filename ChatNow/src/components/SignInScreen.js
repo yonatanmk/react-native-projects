@@ -46,22 +46,22 @@ const SignInScreen = (props) => (
 	</View>
 );
 
-// SignInScreen.propTypes = {
-// 	name: PropTypes.string,
-// 	accountNumber: PropTypes.string,
-// 	onNameUpdate: PropTypes.func.isRequired,
-// 	onAccountNumberUpdate: PropTypes.func.isRequired,
-// 	navHandler: PropTypes.func.isRequired,
-// };
+SignInScreen.propTypes = {
+	name: PropTypes.string,
+	accountNumber: PropTypes.string,
+	onNameUpdate: PropTypes.func.isRequired,
+	onAccountNumberUpdate: PropTypes.func.isRequired,
+	navHandler: PropTypes.func.isRequired,
+};
 
-// function goPressHandler(navHandler, name, accountNum) {
-// 	setCustomerInfo(name, accountNum)
-// 		.then(() => navHandler())
-// 		.catch(ex => {
-// 			console.log('Error storing customer name and account, proceeding anyway. Details:', ex);
-// 			navHandler();
-// 		});
-// }
+function goPressHandler(navHandler, name, accountNum) {
+	setCustomerInfo(name, accountNum)
+		.then(() => navHandler())
+		.catch(ex => {
+			console.log('Error storing customer name and account, proceeding anyway. Details:', ex);
+			navHandler();
+		});
+}
 
 function openHelpPage() {
 	Linking.openURL('https://www.google.com/');
