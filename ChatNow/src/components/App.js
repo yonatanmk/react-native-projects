@@ -10,7 +10,7 @@ import MainScreen from './MainScreen';
 import SignInContainer from '../containers/SignInContainer';
 import ChatContainer from '../containers/ChatContainer';
 import NavBarRouteMapper from './NavBarRouteMapper';
-// import { getCustomerInfo } from '../storageManager';
+import { getCustomerInfo } from '../storageManager';
 
 
 class App extends Component {
@@ -20,15 +20,15 @@ class App extends Component {
 		this._renderScene = this._renderScene.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	getCustomerInfo()
-	// 		.then(data => {
-	// 			if (data.name && data.accountNumber) {
-	// 				console.log('Going to restore from storage:', data);
-	// 				this.props.onRehydrateFromLocalStorage(data.name, data.accountNumber);
-	// 			}
-	// 		});
-	// }
+	componentDidMount() {
+		getCustomerInfo()
+			.then(data => {
+				if (data.name && data.accountNumber) {
+					console.log('Going to restore from storage:', data);
+					this.props.onRehydrateFromLocalStorage(data.name, data.accountNumber);
+				}
+			});
+	}
 
 	_renderScene(route, navigator) {
 		switch (route.name) {
@@ -38,10 +38,12 @@ class App extends Component {
 			return <ChatContainer />;
 		case 'MainScreen':
 		default:
-			return <MainScreen getHelpPressHandler={()=>{
-        navigator.push(routes.signIn);
-      }}/>;
-    }
+			if (this.props.name.length && this.props.accountNumber.length) {
+				return <MainScreen getHelpPressHandler={() => navigator.push(routes.chat)} />;
+			}
+
+			return <MainScreen getHelpPressHandler={() => navigator.push(routes.signIn)} />;
+		}
 	}
 
 	render() {
@@ -60,11 +62,11 @@ class App extends Component {
 	}
 }
 
-// App.propTypes = {
-// 	name: PropTypes.string,
-// 	accountNumber: PropTypes.string,
-// 	onRehydrateFromLocalStorage: PropTypes.func.isRequired,
-// };
+App.propTypes = {
+	name: PropTypes.string,
+	accountNumber: PropTypes.string,
+	onRehydrateFromLocalStorage: PropTypes.func.isRequired,
+};
 
 const styles = StyleSheet.create({
 	container: {
