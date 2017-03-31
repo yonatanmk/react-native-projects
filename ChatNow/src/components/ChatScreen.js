@@ -23,13 +23,13 @@ class ChatScreen extends Component {
 		this._fetchResponses = this._fetchResponses.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	apiPollIntervalId = setInterval(this._fetchResponses, 5000);
-	// }
+	componentDidMount() {
+		apiPollIntervalId = setInterval(this._fetchResponses, 5000);
+	}
 
-	// componentWillUnmount() {
-	// 	clearInterval(apiPollIntervalId);
-	// }
+	componentWillUnmount() {
+		clearInterval(apiPollIntervalId);
+	}
 
 	_fetchResponses() {
 		fetch('http://localhost:8080/messages')
@@ -83,11 +83,11 @@ class ChatScreen extends Component {
 }
 
 ChatScreen.propTypes = {
-	// messages: PropTypes.array.isRequired,
+	messages: PropTypes.array.isRequired,
 	composingMessage: PropTypes.string,
 	onComposeMessageUpdate: PropTypes.func.isRequired,
-	// onSendMessage: PropTypes.func.isRequired,
-	// onReceivedMessage: PropTypes.func.isRequired,
+	onSendMessage: PropTypes.func.isRequired,
+	onReceivedMessage: PropTypes.func.isRequired,
 };
 
 
