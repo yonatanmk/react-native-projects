@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
+var Orientation = require('react-native-orientation');
 
 class Board extends Component {
   render () {
-    console.log(Dimensions.get('window').width);
+    // console.log(Dimensions.get('window').width);
+    console.log(Orientation);
 
     return (
       <View style={styles().container}>
