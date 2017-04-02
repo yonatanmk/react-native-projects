@@ -32,11 +32,14 @@ const settings =  {
 const ProfileScreen = (props)=>{
   return (
     <View style={styles.container}>
-      <View style={{backgroundColor:'gray', width:120, height:120,}}>
+      <View style={{alignItems: 'center', marginTop: 30, marginBottom: 30,}}>
+        <View style={{backgroundColor:'gray', width:120, height:120, borderRadius: 60}}>
+        </View>
+        <Text style={{fontSize:26, fontWeight:'100', marginTop: 20}}>
+          Chuck Norris
+        </Text>
       </View>
-      <Text style={{fontSize:26,}}>
-        Chuck Norris
-      </Text>
+
       {
         Object.keys(settings).map((key)=>{
           return <View key={key} style={styles.setting}>
@@ -56,15 +59,23 @@ const ProfileScreen = (props)=>{
 
 const styles = StyleSheet.create({
   setting:{
+    borderBottomWidth: 1,
+    borderColor:'#d8d8d8',
+    padding: 20,
+    flexDirection: 'row',
   },
   settingProp:{
     color:'#888',
     marginRight:10,
+    width:70,
   },
   container: {
     flex:1,
     backgroundColor: 'white',
   },
+  settingVal: {
+    // flex: 4
+  }
 });
 
 
@@ -72,4 +83,3 @@ const styles = StyleSheet.create({
 
 ProfileScreen.displayName = 'ProfileScreen'
 export default ProfileScreen
-

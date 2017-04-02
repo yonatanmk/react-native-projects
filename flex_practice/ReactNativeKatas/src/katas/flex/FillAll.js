@@ -39,5 +39,3 @@ const styles = StyleSheet.create({
 FillAll.displayName = 'FillAll'
 import FillAllTest from './FillAll.test'
 export {FillAll, FillAllTest}
-
-

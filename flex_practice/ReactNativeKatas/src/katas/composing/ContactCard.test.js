@@ -27,11 +27,11 @@ import colors from '@/runner/colors'
 const ContactCard= (props)=>{
   return (
     <View style={[styles.container, {alignItems:'stretch'}]}>
-      <View style={{}}>
+      <View style={styles.card}>
         <View style={{flexDirection:'row'}}>
-          <View style={{width:80, height:80, backgroundColor:'#229E85'}}>
+          <View style={{width:80, height:80, backgroundColor:'#229E85', borderRadius: 40, marginBottom: 20, marginRight: 20}}>
           </View>
-          <View style={{}}>
+          <View style={{marginTop: 10, alignItems: 'flex-start'}}>
             <Text style={styles.text}>Chuck Norris</Text>
             <Text style={styles.text}>CEO</Text>
           </View>
@@ -56,6 +56,15 @@ const styles = StyleSheet.create({
   text:{
     color: 'white',
     textAlign:'center'
+  },
+  card:{
+    shadowColor:'#175E4C',
+    shadowOpacity:0.7,
+    shadowRadius:10,
+    shadowOffset:{width:2, height:6},
+    backgroundColor:'#2ABB9B',
+    padding: 20,
+    margin: 10,
   }
 });
 
@@ -65,4 +74,3 @@ const styles = StyleSheet.create({
 
 ContactCard.displayName = 'ContactCard'
 export default ContactCard
-

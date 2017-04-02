@@ -25,8 +25,11 @@ import colors from '@/runner/colors'
 const UsingText= (props)=>{
   return (
     <View style={styles.container}>
-      <Text>Using</Text>
-      <Text>Text</Text>
+      <Text style={{fontFamily:'AmericanTypewriter', fontSize:100}}>Using</Text>
+      <Text style={{fontStyle:'italic', fontFamily:'Baskerville', fontSize:100, color: 'white', letterSpacing: -20}}>
+        T
+        <Text style={{fontSize:60, letterSpacing: 0}}>ext</Text>
+      </Text>
     </View>
   )
 }
@@ -47,4 +50,3 @@ const styles = StyleSheet.create({
 
 UsingText.displayName = 'UsingText'
 export default UsingText
-
