@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-import {shuffle} from '../../utilities';
+import {shuffle, boardMaker} from '../../utilities';
 
 class Board extends Component {
   render () {
@@ -14,7 +14,7 @@ class Board extends Component {
       [ 2, 2, 0, 1 ]
     ];
 
-    rows = rows.map((row)=>{
+    rows = boardMaker().map((row)=>{
       let boxes = [];
       for (let i = row[0]; i > 0 ; i--) {
         boxes.push(<View style={[styles.box, styles.red]}></View>);

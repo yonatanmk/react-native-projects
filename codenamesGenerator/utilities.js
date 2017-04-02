@@ -1,4 +1,4 @@
-export function arrMaker () {
+export function boardMaker () {
   let num = 9;
   let arr = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
   for (let i = num; i > 0 ; i--) {
