@@ -1,0 +1,19 @@
+{
+  "name": "rnk",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "fs-extra": "2.1.2",
+    "glob": "7.1.0",
+    "node-resemble-js": "0.2.0",
+    "ramda": "0.23.0",
+    "react": "15.4.0",
+    "react-native": "0.42.0",
+    "react-native-fs": "2.1.0-rc.1",
+    "react-native-navbar": "1.6.3",
+    "react-native-vector-icons": "4.0.0"
+  }
+}
