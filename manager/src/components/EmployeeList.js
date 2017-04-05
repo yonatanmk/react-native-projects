@@ -7,14 +7,22 @@ import { employeesFetch } from '../actions';
 import ListItem from './ListItem';
 
 class EmployeeList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      dataSource: this.createDataSource(props)
+    };
+  }
+
   componentWillMount() {
     this.props.employeesFetch();
 
-    this.createDataSource(this.props);
+    this.setState({dataSource: this.createDataSource(this.props)});
   }
 
   componentWillReceiveProps(nextProps) {
-    this.createDataSource(nextProps);
+    this.setState({dataSource: this.createDataSource(nextProps)});
   }
 
   createDataSource({ employees }) {
@@ -22,7 +30,7 @@ class EmployeeList extends Component {
       rowHasChanged: (r1, r2) => r1 !== r2
     });
 
-    this.dataSource = ds.cloneWithRows(employees);
+    return ds.cloneWithRows(employees);
   }
 
   renderRow(employee) {
@@ -33,7 +41,7 @@ class EmployeeList extends Component {
     return (
       <ListView
         enableEmptySections
-        dataSource={this.dataSource}
+        dataSource={this.state.dataSource}
         renderRow={this.renderRow}
       />
     );
@@ -41,6 +49,7 @@ class EmployeeList extends Component {
 }
 
 const mapStateToProps = state => {
+  // convert hash table to array of objects
   const employees = _.map(state.employees, (val, uid) => {
     return { ...val, uid };
   });
