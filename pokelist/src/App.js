@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
-import Page from './components/Page';
+import PageContainer from './containers/PageContainer';
 
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
@@ -11,7 +11,7 @@ class App extends Component {
   render () {
     return (
       <Provider store={store}>
-        <Page />
+        <PageContainer />
       </Provider>
     );
   }
