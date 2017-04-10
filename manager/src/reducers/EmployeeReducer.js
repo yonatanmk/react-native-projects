@@ -10,6 +10,6 @@ export default (state = INITIAL_STATE, action) => {
     case EMPLOYEES_FETCH_SUCCESS:
       return action.payload;
     default:
-      return stat
+      return state;
   }
 };
