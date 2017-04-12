@@ -3,6 +3,10 @@ import { View, Text } from 'react-native';
 
 
 class Page extends Component {
+  componentDidMount () {
+    this.props.setPokemon('squirtle');
+  }
+
   render () {
     return (
       <View style={styles.text}>

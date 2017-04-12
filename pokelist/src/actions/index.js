@@ -6,7 +6,7 @@ let setPokemonAction = (pokemon) => {
 };
 
 export const setPokemon = (query) => (dispatch) => {
-  return fetch(`http://pokeapi.co/api/v2/pokemon-species/${query}/`)
+  return fetch(`https://rallycoding.herokuapp.com/api/music_albums`)
     .then(response => {
       if (response.ok) {
         return response;
