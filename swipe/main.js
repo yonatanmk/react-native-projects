@@ -39,7 +39,12 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Deck renderCard={this.renderCard} data={DATA}/>
+        <Deck
+          data={DATA}
+          renderCard={this.renderCard}
+          onSwipeRight={ item => console.log(`${item.text} was swiped right`) }
+          onSwipeLeft={ item => console.log(`${item.text} was swiped left`) }
+        />
       </View>
     );
   }
