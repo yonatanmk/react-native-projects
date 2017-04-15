@@ -1,2 +1,3 @@
 /one-time-password/functions/service_account.json
 one-time-password/phone_num.txt
+one-time-password/env.js
