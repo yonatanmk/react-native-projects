@@ -1,5 +1,5 @@
 const twilio = require('twilio');
-const twilioAuthCodes = require('../env');
+const twilioAuthCodes = require('./env.js');
 
 const accountSid = twilioAuthCodes.accountSid;
 const authToken = twilioAuthCodes.authToken;
