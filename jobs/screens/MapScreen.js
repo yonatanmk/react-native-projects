@@ -1,4 +1,4 @@
-import React, { component } from 'react';
+import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
 class MapScreen extends Component {
@@ -12,7 +12,7 @@ class MapScreen extends Component {
         <Text>MapScreen</Text>
         <Text>MapScreen</Text>
       </View>
-    )
+    );
   }
 }
 

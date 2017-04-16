@@ -1,4 +1,4 @@
-import React, { component } from 'react';
+import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
 class WelcomeScreen extends Component {
@@ -12,7 +12,7 @@ class WelcomeScreen extends Component {
         <Text>WelcomeScreen</Text>
         <Text>WelcomeScreen</Text>
       </View>
-    )
+    );
   }
 }
 

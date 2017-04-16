@@ -1,4 +1,4 @@
-import React, { component } from 'react';
+import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
 class SettingsScreen extends Component {
@@ -12,7 +12,7 @@ class SettingsScreen extends Component {
         <Text>SettingsScreen</Text>
         <Text>SettingsScreen</Text>
       </View>
-    )
+    );
   }
 }
 
