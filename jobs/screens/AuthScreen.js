@@ -7,20 +7,31 @@ class AuthScreen extends Component {
   componentDidMount() {
     this.props.facebookLogin();
     // AsyncStorage.removeItem('fb_token'); // use to remove JWT
+
+    this.onAuthComplete(this.props);
+
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.onAuthComplete(nextProps);
+  }
+
+  onAuthComplete(props) {
+    if (props.token) {
+      this.props.navigation.navigate('map');
+    }
   }
 
   render() {
+    // add spinner Component
     return (
-      <View>
-        <Text>AuthScreen</Text>
-        <Text>AuthScreen</Text>
-        <Text>AuthScreen</Text>
-        <Text>AuthScreen</Text>
-        <Text>AuthScreen</Text>
-        <Text>AuthScreen</Text>
-      </View>
+      <View />
     );
   }
 }
 
-export default connect(null, actions)(AuthScreen);
+const mapStateToProps = ({ auth }) => {
+  return { token: auth.token };
+};
+
+export default connect(mapStateToProps, actions)(AuthScreen);
