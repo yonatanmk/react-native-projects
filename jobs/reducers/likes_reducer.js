@@ -9,8 +9,8 @@ export default function(state = [], action) {
   switch (action.type) {
     // case REHYDRATE:
     //   return action.payload.likedJobs || [];
-    // case CLEAR_LIKED_JOBS:
-    //   return [];
+    case CLEAR_LIKED_JOBS:
+      return [];
     case LIKE_JOB:
       return _.uniqBy([
         action.payload, ...state
