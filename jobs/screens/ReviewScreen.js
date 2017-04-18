@@ -8,6 +8,11 @@ import { MapView } from 'expo';
 class ReviewScreen extends Component {
   static navigationOptions = {
     title: 'Review Jobs',
+    tabBar: {
+      icon: ({ tintColor }) => {
+        return <Icon name="favorite" size={30} color={tintColor} />;
+      }
+    },
     header: ({ navigate }) => {
       return {
         right: (
