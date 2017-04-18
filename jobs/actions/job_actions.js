@@ -4,7 +4,7 @@ import qs from 'qs';
 
 import {
   FETCH_JOBS,
-  // LIKE_JOB,
+  LIKE_JOB,
   // CLEAR_LIKED_JOBS
 } from './types';
 
@@ -35,13 +35,13 @@ export const fetchJobs = (region, callback) => async (dispatch) => {
   }
 };
 
-// export const likeJob = (job) => {
-//   return {
-//     payload: job,
-//     type: LIKE_JOB
-//   };
-// };
-//
+export const likeJob = (job) => {
+  return {
+    payload: job,
+    type: LIKE_JOB
+  };
+};
+
 // export const clearLikedJobs = () => {
 //   return { type: CLEAR_LIKED_JOBS };
 // };

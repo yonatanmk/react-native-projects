@@ -17,6 +17,7 @@ class Swipe extends Component {
   static defaultProps = {
     onSwipeRight: () => {},
     onSwipeLeft: () => {},
+    // renderNoMoreCards: () => {},
     keyProp: 'id'
   }
 
